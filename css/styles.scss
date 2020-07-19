@@ -1,0 +1,308 @@
+
+$box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$colour-light-blue: #e7effe;
+$colour-blue: #304ffe;
+
+$colour-light-orange: #ffe9e5;
+$colour-orange: #ff6347;
+
+$colour-purple: #6c63ff;
+$colour-light-purple: #e7e5ff;
+
+$colour-charcoal: #333c44;
+$colour-ash: #d3d9de;
+
+$breakpoint-small: 600px;
+$breakpoint-medium: 1200px;
+$breakpoint-large: 1800px;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font-family: "Nunito",
+sans-serif;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+
+.content {
+  width: 60%;
+
+  @media screen and (max-width: $breakpoint-large) {
+    width: 70%;
+  }
+  @media screen and (max-width: $breakpoint-medium) {
+    width: 80%;
+  }
+  @media screen and (max-width: $breakpoint-small) {
+    width: 90%;
+  }
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  z-index: 99;
+}
+
+.projects {
+  margin-top: -120px;
+  @media screen and (max-width: $breakpoint-large) {
+    margin-top: -80px;
+  }
+  @media screen and (max-width: $breakpoint-medium) {
+    margin-top: -20px;
+  }
+  @media screen and (max-width: $breakpoint-small) {
+    margin-top: 0px;
+  }
+
+  .projects-bg {
+    margin-top: -6px;
+    padding-top: 48px;
+    background: $colour-light-blue;
+  }
+
+  .list {
+
+    position: relative;
+    box-sizing: border-box;
+    z-index: 99;
+
+    .item {
+      width: 100%;
+      padding: 16px;
+      background: white;
+      box-sizing: border-box;
+      border: 1px solid #dcdee2;
+      box-shadow: $box-shadow;
+
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+
+      transition: all 0.2s linear;
+
+      &.blue {
+        border-top: 5px solid $colour-blue;
+      }
+
+      &.orange {
+        border-top: 5px solid $colour-orange;
+      }
+
+      &.purple {
+        border-top: 5px solid $colour-purple;
+      }
+    }
+  }
+
+}
+
+.fix-offset {
+  margin-top: -120px;
+  
+  @media screen and (max-width: $breakpoint-medium) {
+    margin-top: -20px;
+  }
+  @media screen and (max-width: $breakpoint-small) {
+    margin-top: 0px;
+  }
+}
+
+
+.uses {
+  margin-bottom: 40px;
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -24px;
+    
+    .item {
+      flex: 1;
+      padding: 24px;
+      box-sizing: border-box;
+      border: 1px solid #dcdee2;
+      box-shadow: $box-shadow;
+      margin: 0 24px;
+    }
+  }
+}
+
+.contact {
+  margin-bottom: 40px;
+}
+
+
+
+.links {
+  display: flex;
+  margin-top: 8px;
+
+  .link:hover {
+    background: $colour-light-blue;
+    border: 1px solid $colour-light-blue;
+  }
+
+  .link {
+    display: flex;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 1px solid $colour-ash;
+    margin-right: 12px;
+
+    font-weight: 400;
+    color: $colour-blue;
+
+    transition: all 0.2s linear;
+
+    img {
+      margin-right: 12px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-small) {
+    flex-direction: column;
+
+    .link {
+      margin-right: 0;
+      margin-bottom: 12px;
+      padding: 18px;
+    }
+  }
+
+
+}
+
+
+.not-daniel {
+  ::selection {
+    background: none;
+  }
+
+  padding-bottom: 6px;
+  border-bottom: 1px solid black;
+
+  &:hover:active>span {
+    display: none;
+    visibility: hidden;
+  }
+
+  span {
+    pointer-events: none;
+  }
+
+  &:active {
+    color: black;
+    text-decoration: line-through;
+    border-bottom: 1px solid black;
+
+    &::before {
+      content: "not a Daniel";
+    }
+
+  }
+}
+
+
+.title {
+  @extend .h2;
+  padding: 12px;
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+
+  font-weight: 700;
+
+  &.orange {
+    background: lighten($color: $colour-orange, $amount: 33);
+    color: $colour-orange;
+  }
+
+  &.blue {
+    background: lighten($color: $colour-blue, $amount: 33);
+    color: $colour-blue;
+  }
+
+  &.purple {
+    background: $colour-light-purple;
+    color: $colour-purple;
+  }
+
+  &.black {
+    background: $colour-ash;
+    color: $colour-charcoal;
+  }
+
+  @media screen and (max-width: $breakpoint-small) {
+    width: 100%;
+  }
+}
+
+
+// fonts
+h1,
+.h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 32px 0;
+
+  &::selection {
+    background: none;
+  }
+
+}
+
+h2,
+.h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  font-variation-settings: "CASL"1;
+}
+
+h3,
+.h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  font-weight: 300;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: $colour-blue;
+}
+
+ul li,
+p,
+.p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: black;
+}
+
+.interests {
+  @extend .p;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+}
