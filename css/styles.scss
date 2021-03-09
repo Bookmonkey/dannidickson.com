@@ -82,15 +82,15 @@ body {
     }
 
     .list .item {
-      background: lighten($colour-dark-light, $amount: 10);
-      border: 1px solid lighten($colour-dark-light, $amount: 20);
+      background: $colour-dark;
+      border: 1px solid lighten($colour-dark, $amount: 1);
     }
 
   }
 
   .uses {
     .item {
-      border: 1px solid lighten($colour-dark-light, $amount: 20) !important;
+      border: 1px solid lighten($colour-dark-light, $amount: 1) !important;
     }
   }
 }
@@ -250,7 +250,7 @@ body {
 }
 
 .contact {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 
@@ -405,7 +405,7 @@ ul li,
 p,
 .p {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 

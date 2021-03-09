@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Not a Daniel</title>
+  <title>Danni Dickson</title>
   <link rel="stylesheet" href="/css/styles.scss">
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -164,11 +164,25 @@
   </section>
 </body>
 
-<script defer>
+<script>
+  let theme;
   let toggle = document.querySelector('.toggle');
   let body = document.querySelector('body');
+
+  document.addEventListener("DOMContentLoaded", () => {
+    theme = localStorage.getItem("theme");
+    if(theme === "dark") {
+      body.classList.toggle('dark-mode');
+    }
+  });
+
   toggle.addEventListener('click', function(ev) {
     body.classList.toggle('dark-mode');
+
+    theme = (body.classList.contains('dark-mode')) ? 'dark' : 'light';
+
+    localStorage.setItem("theme", theme);
+    
   });
 </script>
 </html>
